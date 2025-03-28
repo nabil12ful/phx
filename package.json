@@ -28,5 +28,9 @@
       "uiTheme": "vs-dark",
       "path": "./syntaxes/phx-color-theme.json"
     }]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nabil12ful/phx.git"
   }
 }
