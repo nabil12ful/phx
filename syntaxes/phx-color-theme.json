@@ -1,0 +1,47 @@
+{
+    "name": "PHX Theme",
+    "type": "dark",
+    "colors": {
+        "editor.background": "#1e1e1e"
+    },
+    "tokenColors": [
+        {
+            "scope": "keyword.control.phx",
+            "settings": {
+                "foreground": "#FF4500",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "string.quoted.double.phx",
+            "settings": {
+                "foreground": "#FFD700"
+            }
+        },
+        {
+            "scope": "variable.other.phx",
+            "settings": {
+                "foreground": "#9CDCFE"
+            }
+        },
+        {
+            "scope": "entity.name.function.phx",
+            "settings": {
+                "foreground": "#4EC9B0"
+            }
+        },
+        {
+            "scope": "comment.line.double-slash.phx",
+            "settings": {
+                "foreground": "#6A9955",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "constant.numeric.phx",
+            "settings": {
+                "foreground": "#B5CEA8"
+            }
+        }
+    ]
+}

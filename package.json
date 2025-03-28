@@ -1,0 +1,32 @@
+{
+  "name": "phx",
+  "displayName": "PHX",
+  "description": "PHX: An innovative programming environment that combines the simplicity of PHP with the power of static type checking and automatic transpilation, delivering a flexible and high-performance development experience for web applications.",
+  "version": "0.0.1",
+  "icon": "phx-icon.png",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "phx",
+      "aliases": ["PHX", "phx"],
+      "extensions": [".phx"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "phx",
+      "scopeName": "source.phx",
+      "path": "./syntaxes/phx.tmLanguage.json"
+    }],
+    "themes": [{
+      "language": "phx",
+      "scopeName": "source.phx",
+      "uiTheme": "vs-dark",
+      "path": "./syntaxes/phx-color-theme.json"
+    }]
+  }
+}
