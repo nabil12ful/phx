@@ -1,47 +1,154 @@
 {
-    "name": "PHX Theme",
-    "type": "dark",
-    "colors": {
-        "editor.background": "#1e1e1e"
-    },
-    "tokenColors": [
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "PHX",
+    "scopeName": "source.phx",
+    "patterns": [
         {
-            "scope": "keyword.control.phx",
-            "settings": {
-                "foreground": "#FF4500",
-                "fontStyle": "bold"
-            }
+            "include": "#comments"
         },
         {
-            "scope": "string.quoted.double.phx",
-            "settings": {
-                "foreground": "#FFD700"
-            }
+            "include": "#keywords"
         },
         {
-            "scope": "variable.other.phx",
-            "settings": {
-                "foreground": "#9CDCFE"
-            }
+            "include": "#classes"
         },
         {
-            "scope": "entity.name.function.phx",
-            "settings": {
-                "foreground": "#4EC9B0"
-            }
+            "include": "#interfaces"
         },
         {
-            "scope": "comment.line.double-slash.phx",
-            "settings": {
-                "foreground": "#6A9955",
-                "fontStyle": "italic"
-            }
+            "include": "#strings"
         },
         {
-            "scope": "constant.numeric.phx",
-            "settings": {
-                "foreground": "#B5CEA8"
-            }
+            "include": "#numbers"
+        },
+        {
+            "include": "#booleans"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#functions"
         }
-    ]
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.phx",
+                    "begin": "//",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.phx"
+                        }
+                    },
+                    "end": "$",
+                    "patterns": []
+                },
+                {
+                    "name": "comment.block.phx",
+                    "begin": "/\\*",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.begin.phx"
+                        }
+                    },
+                    "end": "\\*/",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.end.phx"
+                        }
+                    },
+                    "patterns": []
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.phx",
+                    "match": "\\b(if|else|while|for|function|return|static|const|public|private|protected|var|trait|namespace|final|abstract|extends|implements|use|break|continue)\\b"
+                }
+            ]
+        },
+        "classes": {
+            "patterns": [
+                {
+                    "name": "entity.name.class.phx",
+                    "match": "\\bclass\\s+([A-Z][a-zA-Z0-9_]*)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "entity.name.class.phx"
+                        }
+                    }
+                }
+            ]
+        },
+        "interfaces": {
+            "patterns": [
+                {
+                    "name": "storage.type.interface.phx",
+                    "match": "\\binterface\\s+([A-Z][a-zA-Z0-9_]*)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "entity.name.interface.phx"
+                        }
+                    }
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.phx",
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.phx"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.phx"
+                }
+            },
+            "patterns": [
+                {
+                    "name": "constant.character.escape.phx",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.phx",
+                    "match": "\\b\\d+(\\.\\d+)?\\b"
+                }
+            ]
+        },
+        "booleans": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.phx",
+                    "match": "\\b(true|false|null)\\b"
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.other.phx",
+                    "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.phx",
+                    "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=\\()"
+                }
+            ]
+        }
+    }
 }

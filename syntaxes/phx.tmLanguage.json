@@ -58,7 +58,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.phx",
-					"match": "\\b(if|else|while|for|function|return)\\b"
+					"match": "\\b(if|else|while|for|function|return|interface|class|static|const|public|private|protected|var|type|void|int|float|double|bool|string|trait|namespace|final|abstract|extends|implements|use|break|continue)\\b"
 				}
 			]
 		},
